@@ -33,7 +33,7 @@ app.get('/api/items', async (req, res) => {
     }
 });
 
-// Iniciar el servidor
+// Iniciar el servidorr
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
 });
