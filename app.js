@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const routes = require('./routes');  // Importa las rutas
+const routes = require('./routes');
 
 dotenv.config();
 
@@ -11,8 +11,8 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-// Usa las rutas importadas
-app.use('/api', routes);  // Agrega el prefijo '/api' para todas las rutas
+// Aquí se usa el router ya construido
+app.use('/api', routes);
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);

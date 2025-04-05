@@ -6,7 +6,7 @@ require('dotenv').config();
 const router = express.Router();
 
 // Simulación de usuarios en base de datos (Reemplázalo con tu lógica real)
-const users = [{ id: 1, username: 'admin', password: bcrypt.hashSync('123456', 10) }];
+const users = await pool.query('SELECT * FROM "Users"');;
 
 // Ruta de login para generar token
 router.post('/login', async (req, res) => {
