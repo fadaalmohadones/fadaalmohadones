@@ -5,11 +5,10 @@ require('dotenv').config();
 
 const router = express.Router();
 
-// Simulación de usuarios en base de datos (Reemplázalo con tu lógica real)
-const users = await pool.query('SELECT * FROM "Users"');;
 
 // Ruta de login para generar token
 router.post('/login', async (req, res) => {
+    const users = await pool.query('SELECT * FROM "Users"');
     const { username, password } = req.body;
     const user = users.find(u => u.username === username);
 
